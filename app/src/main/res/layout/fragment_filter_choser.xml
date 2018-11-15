@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adamw.visoncarsystem.filterChoserFragment"
+    android:orientation="horizontal"
+    android:paddingTop="10px"
+    android:paddingBottom="10px"
+    android:paddingLeft="10px"
+    android:paddingRight="10px">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:paddingLeft="20px"
+        android:paddingRight="20px"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/grayTextFragment"
+            android:text = "@string/grayText"
+            android:layout_centerHorizontal="true"
+            />
+        <CheckBox
+            android:id="@+id/grayCheckBox"
+            android:layout_below="@+id/grayTextFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/blurTextFragment"
+            android:text = "@string/blurText"
+            android:layout_centerHorizontal="true"
+            />
+        <CheckBox
+            android:id="@+id/blurCheckBox"
+            android:layout_below="@+id/blurTextFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/threshTextFragment"
+            android:text = "@string/threshText"
+            android:layout_centerHorizontal="true"
+            />
+        <CheckBox
+            android:id="@+id/threshCheckBox"
+            android:layout_below="@+id/threshTextFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cannyTextFragment"
+            android:text = "@string/cannyText"
+            android:layout_centerHorizontal="true"
+            />
+        <CheckBox
+            android:id="@+id/cannyCheckBox"
+            android:layout_below="@+id/cannyTextFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+
+
+</LinearLayout>

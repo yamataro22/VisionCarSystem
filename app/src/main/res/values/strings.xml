@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">VisonCarSystem</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome_message">Witaj w systemie wyzyjnym!
+    Ustaw parametry w zakładce ustawień i uruchom
+    przechwytywanie obrazu.</string>
+    <string name="capturing_button">START</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="frequency_text_view">Częstotliwość przechwytywania</string>
+    <string name="is_black_text_view">Czy czarno-biały?</string>
+    <string name="button_save">Zapisz ustawienia</string>
+    <string-array name="frequency_spinner">
+        <item>5Hz</item>
+        <item>10Hz</item>
+        <item>20Hz</item>
+        <item>30Hz</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="threshFragmentText">Ustaw parametry progowania</string>
+    <string name="threshValue">Próg:</string>
+    <string name="tryButton">Wypróbuj</string>
+    <string name="saveButton">Zapisz parametry</string>
+
+    <string name="grayText">Gray</string>
+    <string name="blurText">Blur</string>
+    <string name="threshText">Thresh</string>
+    <string name="cannyText">Canny</string>
+</resources>

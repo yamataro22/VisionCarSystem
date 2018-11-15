@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adamw.visoncarsystem.ThresholdParametersFragment"
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
+
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id = "@+id/threshTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/threshFragmentText"
+        android:layout_alignParentLeft="true"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+
+        <TextView
+            android:id="@+id/threshValueTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/threshValue"
+            android:layout_below="@id/threshTextId"
+            android:paddingTop="20dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:text="140"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/threshValueTextId"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:width="70dp"
+            />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tryButton"
+        android:layout_below="@id/threshValueTextId"
+        android:paddingTop="20dp"
+        android:onClick="onClickButtonTry"
+        />
+
+
+
+
+
+
+</RelativeLayout>
