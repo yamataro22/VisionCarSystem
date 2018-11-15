@@ -58,19 +58,25 @@
         android:layout_marginRight="10dp"
         >
         <TextView
+            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/isBlackTextView"
-            android:text="@string/is_black_text_view"
+            android:text="Parametr progowania"
             android:layout_alignParentLeft="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             />
 
-        <CheckBox
+        <EditText
+            android:id="@+id/threshEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"
+            android:inputType="number"
+            android:text="140"
             android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/isBlackTextView"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:width="70dp"
             />
     </RelativeLayout>
 

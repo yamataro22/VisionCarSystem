@@ -16,17 +16,9 @@ import android.widget.Toast;
 
 import org.opencv.core.Mat;
 
-public class CameraCalibrationActivity extends  CameraBasicActivity implements View.OnTouchListener {
-
-    onStateChangedListener listener;
-
-    boolean isLandscaped = false;
+abstract public class CameraCalibrationActivity extends  CameraBasicActivity implements View.OnTouchListener {
 
 
-    public interface onStateChangedListener
-    {
-        void stateChanged();
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,39 +33,15 @@ public class CameraCalibrationActivity extends  CameraBasicActivity implements V
     }
 
     @Override
-    public void onCameraViewStarted(int width, int height) {
-
-    }
+    abstract public void onCameraViewStarted(int width, int height);
 
     @Override
-    public void onCameraViewStopped() {
-
-    }
+    abstract public void onCameraViewStopped();
 
     @Override
-    public Mat onCameraFrame(Mat inputFrame) {
-        return inputFrame;
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if(mOpenCvCameraView.getVisibility() == SurfaceView.VISIBLE)
-            mOpenCvCameraView.setVisibility(SurfaceView.INVISIBLE);
-        else
-            mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
-        return false;
-    }
+    abstract public Mat onCameraFrame(Mat inputFrame);
 
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            Intent intent = new Intent();
-            intent.putExtra("someValue", "data");
-            setResult(RESULT_OK, intent);
-            finish();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+     abstract public boolean onKeyDown(int keyCode, KeyEvent event);
 }

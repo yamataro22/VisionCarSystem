@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
 public class SettingsActivity extends Activity {
+
+    private int threshValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,14 +20,18 @@ public class SettingsActivity extends Activity {
 
     public void onClickCalibrate(View v)
     {
-        Intent intent = new Intent(this, CameraCalibrationActivity.class);
-        int requestCode = 1; // Or some number you choose
+        EditText editText = findViewById(R.id.threshEditText);
+        threshValue = Integer.parseInt(editText.getText().toString());
+        Intent intent = new Intent(this, ThreshCalibrationActivity.class);
+        intent.putExtra(ThreshCalibrationActivity.THRESH_1, threshValue);
+        int requestCode = 1; // Or dowolny
         startActivityForResult(intent, requestCode);
     }
 
     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
         // Collect data from the intent and use it
-        String value = data.getStringExtra("someValue");
-        Log.i("otrzymano",value);
+        threshValue = data.getIntExtra(ThreshCalibrationActivity.THRESH_2, 100);
+        EditText editText = findViewById(R.id.threshEditText);
+        editText.setText(threshValue+"");
     }
 }

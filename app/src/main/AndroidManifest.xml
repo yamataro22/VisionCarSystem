@@ -40,7 +40,8 @@
         <activity android:name=".SettingsActivity" />
         <activity android:name=".CameraScreenActivity" />
         <activity android:name=".CameraCalibrationActivity" />
-        <activity android:name=".CameraBasicActivity"></activity>
+        <activity android:name=".CameraBasicActivity" />
+        <activity android:name=".ThreshCalibrationActivity"></activity>
     </application>
 
 </manifest>
