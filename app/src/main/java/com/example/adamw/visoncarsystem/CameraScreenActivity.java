@@ -24,14 +24,10 @@ import org.opencv.imgproc.Imgproc;
 
 
 
-public class CameraScreenActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener {
+public class CameraScreenActivity extends CameraBasicActivity {
 
     public static final String TYPE = "THRESH";
-    public static final String filterType = "CANNY";
     public static final String THRESHPARAM = "140";
-    private int threshVal = 140;
-
-
 
     public static final String IFBLUR = "messageBlur";
     public static final String IFTHRESH = "messageThresh";
@@ -41,21 +37,9 @@ public class CameraScreenActivity extends Activity implements CameraBridgeViewBa
     private boolean[] filters = new boolean[4];
 
 
-    static {
-        OpenCVLoader.initDebug();
-    }
-    public static final int  MY_PERMISSIONS_REQUEST_CAMERA =1;
-    private CameraBridgeViewBase mOpenCvCameraView;
-    private  Mat mRgba;
-
-    private static final String  TAG = "CameraScreenActivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "CameraScreenActivity created");
-        Log.i("filtry", "uruchmamiam onCreate");
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_camera_screen);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -66,41 +50,7 @@ public class CameraScreenActivity extends Activity implements CameraBridgeViewBa
             filters[1] = intent.getBooleanExtra(IFBLUR, false);
             filters[2] = intent.getBooleanExtra(IFTHRESH, false);
             filters[3] = intent.getBooleanExtra(IFCANNY, false);
-            Log.i("filtry", "----------------");
-            Log.i("filtry", filters[0] + "");
-            Log.i("filtry", filters[1] + "");
-            Log.i("filtry", filters[2] + "");
-            Log.i("filtry", filters[3] + "");
-            Log.i("filtry", "----------------");
-            Log.i("filtry", "skończyłem odczytywać filtry");
         }
-        //filterType = intent.getStringExtra(TYPE);
-        //threshVal = intent.getIntExtra(THRESHPARAM, 140);
-
-        // Here, thisActivity is the current activity
-        if (checkSelfPermission(Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            Log.i(TAG, "Permissions not granted");
-            Log.i("filtry", "nie przyznano praw");
-            // Permission is not granted
-            // Should we show an explanation?
-            if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-            } else {
-                // No explanation needed; request the permission
-                Log.i(TAG, "Sending permission request");
-                Log.i("filtry", "wysyłam do wyboru praw");
-                requestPermissions(new String[]{Manifest.permission.CAMERA},
-                        MY_PERMISSIONS_REQUEST_CAMERA);
-
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
-            }
-        }
-
 
         mOpenCvCameraView = findViewById(R.id.HelloOpenCvView);
         mOpenCvCameraView.enableView();
@@ -112,35 +62,7 @@ public class CameraScreenActivity extends Activity implements CameraBridgeViewBa
 
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        Log.i("filtry", "wchodzę do requestpermissionresult");
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_CAMERA: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-                    //mCamera = getCameraInstance();
-                    //mPreview = new CameraPreview(this, mCamera);
-                    //FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
-                    //preview.addView(mPreview);
-                    Log.i(TAG, "włączam vidok opencv");
 
-
-                } else {
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-                }
-                return;
-            }
-
-            // other 'case' lines to check for other
-            // permissions this app might request.
-        }
-    }
 
     public void putMatInImageView(Mat m, ImageView view)
     {
@@ -190,8 +112,6 @@ public class CameraScreenActivity extends Activity implements CameraBridgeViewBa
         if (mOpenCvCameraView != null)
             mOpenCvCameraView.disableView();
     }
-    public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
-        return inputFrame.rgba();
-    }
+
 
 }
