@@ -6,7 +6,9 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.OpenCVLoader;
@@ -91,5 +93,6 @@ abstract public class CameraBasicActivity extends Activity  implements CameraBri
 
     @Override
     abstract public Mat onCameraFrame(Mat inputFrame);
+
 
 }

@@ -79,7 +79,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="bottom"
-        android:text="@string/button_save"
+        android:text="kalibruj"
+        android:onClick="onClickCalibrate"
         />
 
     <fragment
